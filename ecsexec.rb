@@ -5,20 +5,20 @@
 class Ecsexec < Formula
   desc ""
   homepage ""
-  version "0.0.2"
+  version "0.0.3"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/Taiki130/ecsexec/releases/download/v0.0.2/ecsexec_Darwin_x86_64.tar.gz"
-      sha256 "68a6cbdf7167e5588bf101f8dba4ef426c6bd8c7450fcb0cd934bde619ae980c"
+      url "https://github.com/Taiki130/ecsexec/releases/download/v0.0.3/ecsexec_Darwin_x86_64.tar.gz"
+      sha256 "dddbe6f48f193b62221d5e95195281f7d0183859960aaa341db4f41f8c7fee01"
 
       def install
         bin.install "ecsexec"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/Taiki130/ecsexec/releases/download/v0.0.2/ecsexec_Darwin_arm64.tar.gz"
-      sha256 "f4fbf8b6155ab558e0dd0497bf20041c57096c9f247ea178d71cc019527b7cc8"
+      url "https://github.com/Taiki130/ecsexec/releases/download/v0.0.3/ecsexec_Darwin_arm64.tar.gz"
+      sha256 "cade4cae331657ddfee1d095d3acd3853bb02a955ec7644de1222c5dfc80929d"
 
       def install
         bin.install "ecsexec"
@@ -28,16 +28,16 @@ class Ecsexec < Formula
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/Taiki130/ecsexec/releases/download/v0.0.2/ecsexec_Linux_x86_64.tar.gz"
-      sha256 "3ad91f89fce1639ef589c1f10d84754f01aaaca023f22b85b2bf542e74756439"
+      url "https://github.com/Taiki130/ecsexec/releases/download/v0.0.3/ecsexec_Linux_x86_64.tar.gz"
+      sha256 "c04658b9a8a61a1cb4055035293cb80bcd422d842dc6d2f38dc691096d3335e0"
 
       def install
         bin.install "ecsexec"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/Taiki130/ecsexec/releases/download/v0.0.2/ecsexec_Linux_arm64.tar.gz"
-      sha256 "3d0edc42ede4d1fc3504326c06156563e208b1283df37676f0c99c31ba878046"
+      url "https://github.com/Taiki130/ecsexec/releases/download/v0.0.3/ecsexec_Linux_arm64.tar.gz"
+      sha256 "45a06e304209c9ea9743ad3b348c7fbc3bfe9baf6a9a65b197374ce2b2afa0f7"
 
       def install
         bin.install "ecsexec"
