@@ -5,20 +5,20 @@
 class Ecsexec < Formula
   desc ""
   homepage ""
-  version "0.0.3"
+  version "0.0.4"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/Taiki130/ecsexec/releases/download/v0.0.3/ecsexec_Darwin_x86_64.tar.gz"
-      sha256 "dddbe6f48f193b62221d5e95195281f7d0183859960aaa341db4f41f8c7fee01"
+      url "https://github.com/Taiki130/ecsexec/releases/download/v0.0.4/ecsexec_Darwin_x86_64.tar.gz"
+      sha256 "8f2b231128a095b416ecc50400a4c90e716444dbc8db7589de1fb9a92d73a71e"
 
       def install
         bin.install "ecsexec"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/Taiki130/ecsexec/releases/download/v0.0.3/ecsexec_Darwin_arm64.tar.gz"
-      sha256 "cade4cae331657ddfee1d095d3acd3853bb02a955ec7644de1222c5dfc80929d"
+      url "https://github.com/Taiki130/ecsexec/releases/download/v0.0.4/ecsexec_Darwin_arm64.tar.gz"
+      sha256 "4a23eea86e45f244b9e6a2b138de71659656539eae4a7cb5fb8d7c9da4929fa1"
 
       def install
         bin.install "ecsexec"
@@ -28,19 +28,23 @@ class Ecsexec < Formula
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/Taiki130/ecsexec/releases/download/v0.0.3/ecsexec_Linux_x86_64.tar.gz"
-      sha256 "c04658b9a8a61a1cb4055035293cb80bcd422d842dc6d2f38dc691096d3335e0"
+      if Hardware::CPU.is_64_bit?
+        url "https://github.com/Taiki130/ecsexec/releases/download/v0.0.4/ecsexec_Linux_x86_64.tar.gz"
+        sha256 "9ea2c72f17a52d1db9d08a5cfd5662ca4ae6691709c429165f62dffa73ad142b"
 
-      def install
-        bin.install "ecsexec"
+        def install
+          bin.install "ecsexec"
+        end
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/Taiki130/ecsexec/releases/download/v0.0.3/ecsexec_Linux_arm64.tar.gz"
-      sha256 "45a06e304209c9ea9743ad3b348c7fbc3bfe9baf6a9a65b197374ce2b2afa0f7"
+    if Hardware::CPU.arm?
+      if Hardware::CPU.is_64_bit?
+        url "https://github.com/Taiki130/ecsexec/releases/download/v0.0.4/ecsexec_Linux_arm64.tar.gz"
+        sha256 "287aaf63fe9ebe0330c105d98fdd05aaf503e11a8173dc2c584e2cc3c97ad8cf"
 
-      def install
-        bin.install "ecsexec"
+        def install
+          bin.install "ecsexec"
+        end
       end
     end
   end
